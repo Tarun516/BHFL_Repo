@@ -10,7 +10,10 @@ function App() {
   const handleSubmit = async () => {
     try {
       const parsedInput = JSON.parse(jsonInput);
-      const res = await axios.post("http://localhost:3000/bfhl", parsedInput);
+      const res = await axios.post(
+        "https://bhfl-production.up.railway.app",
+        parsedInput
+      );
       setResponse(res.data);
       setError(null); // Clear any previous errors
     } catch (error) {
